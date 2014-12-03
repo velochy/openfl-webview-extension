@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="WVTest" package="com.webview.test" version="1.0.0" company="" />
+	<app main="Main" path="Export"  file="WVTest" />
+
+	<haxedef name="local_file" />
+
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="WebViewExtension" />
+
+	<assets path="Assets" rename="assets" exclude="*.svg" />
+	<icon path="Assets/icon.svg" />
+
+	<!-- Does not work, sadly -->
+	<!--template path="Assets/LaunchScreen.xib" rename="/LaunchScreen.xib" />
+	<template path="Assets/logo.png" rename="/logo.png" /-->
+	
+	<ios deployment="7" devices="universal" />
+	<access origin="*" subdomain="true"/>
+
+	<template path="WVTest-Info.plist" rename="/WVTest-Info.plist" />
+</project>

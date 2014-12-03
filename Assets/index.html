@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>iOS test</title>
+    <meta name="viewport" content="width=device-width">
+    
+  </head>
+  <body>
+    <div>Test page for iOS WV</div>
+
+    <!-- html has access to other files in same directory -->
+    <img src="logo.png"/>
+
+    <script>
+    
+    // Catch events from HaXe
+    function trigger() {
+      var args = arguments;
+      console.log("TRIGGERED:",args);
+
+      addElement(JSON.stringify(args));
+    }
+
+    // Call HaXe functions exposed with JSCallback
+    function callHaXeFunction(name,params) {
+      var url = "haxe:"+JSON.stringify({ name: name, args: params});
+      console.log(url);
+
+      // Creating an iframe is safer than using window.location
+      var iframe = document.createElement("IFRAME");
+      iframe.setAttribute("src", url);
+      document.documentElement.appendChild(iframe);
+      iframe.parentNode.removeChild(iframe);
+      iframe = null;
+    }
+
+    // Small helper for visualization
+    function addElement(content) {
+      var list = document.getElementById('list');
+      var newdiv = document.createElement('div');
+      newdiv.textContent = content;
+      list.appendChild(newdiv);
+    }
+
+    </script>
+
+    <div>
+    <button onclick="callHaXeFunction('echo',['click',0])">Echo click</button></div>
+
+    <div id="list"></div>
+  </body>
+</html>
