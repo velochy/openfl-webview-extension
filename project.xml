@@ -14,8 +14,9 @@
 	<icon path="Assets/icon.svg" />
 
 	<!-- Does not work, sadly -->
-	<!--template path="Assets/LaunchScreen.xib" rename="/LaunchScreen.xib" />
-	<template path="Assets/logo.png" rename="/logo.png" /-->
+	<template path="Assets/LaunchScreen.xib" rename="/LaunchScreen.xib" />
+	<template path="Assets/logo.png" rename="/logo.png" />
+	<template path="Assets/index.html" rename="/index.html" />
 	
 	<ios deployment="7" devices="universal" />
 	<access origin="*" subdomain="true"/>
